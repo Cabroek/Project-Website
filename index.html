@@ -1,141 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CS 396 Project Website</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: white;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            line-height: 1.6;
+        }
 
-      header {
-        text-align: center;
-        padding: 20px;
-        background-color: #eecc0a;
-        color: #231F20;
-      }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #eecc0a;
+            color: #231F20;
+        }
 
-      nav {
-        display: flex;
-        justify-content: space-around;
-        background-color: #891b2f;
-        padding: 10px;
-      }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
 
-      nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.2em;
-        transition: color 0.3s ease;
-      }
+        header p {
+            font-size: 1.2em;
+            color: #333;
+        }
 
-      nav a:hover {
-        color: #eecc0a;
-      }
+        nav {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #891b2f;
+            padding: 10px;
+        }
 
-      section {
-        margin: 40px 0;
-        padding: 20px;
-        background-color: white;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
 
-      section p {
-        line-height: 1.6;
-      }
+        nav a:hover, nav a:focus {
+            color: #eecc0a;
+            transform: scale(1.05);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(238, 204, 10, 0.5);
+        }
 
-      footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #eecc0a;
-        color: #231F20;
-      }
+        section {
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        section:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            border-bottom: 2px solid #891b2f;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #eecc0a;
+            color: #231F20;
+        }
+
+        @media (max-width: 768px) {
+            header, nav, section, footer {
+                padding: 10px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                padding: 10px;
+                margin-top: 5px;
+            }
+
+            section {
+                margin: 20px 10px;
+            }
+        }
     </style>
-  </head>
-
-  <body>
+</head>
+<body>
     <header>
-      <h1>DraftMirror</h1>
-      <p>CS 396 Project Website</p>
+        <h1>DraftMirror</h1>
+        <p>CS 396 Project Website</p>
     </header>
 
     <nav>
-      <a href="#vision">Vision</a>
-      <a href="#team">Team</a>
-      <a href="#code">Code</a>
-      <a href="#report">Report</a>
-      <a href="https://computing.calvin.edu/" target="_blank">CS Department</a>
+        <a href="#vision">Vision</a>
+        <a href="#team">Team</a>
+        <a href="#code">Code</a>
+        <a href="#report">Report</a>
+        <a href="https://computing.calvin.edu/" target="_blank">CS Department</a>
     </nav>
 
     <section id="vision">
-      <h2>Vision</h2>
-      <p>
-        Recent breakthroughs in large language models(LLMs) have led to the
-        development of tools like Chat GPT and Bing Chat, which can produce
-        texts comparable to those written by competent writers. The affordances
-        of these tools encourage users to offload large parts of their thinking
-        and writing onto the LLM. But in doing so, users ' surrender autonomy
-        and authorship over their writing. Could LLMs instead encourage writers
-        to reflect on texts that they wrote themselves? Could these reflections
-        lead them to make meaningful revisions to their texts? Our goal is to
-        provide writers with a tool that promotes reflection and encourages
-        revision of their writing. Many writers encounter challenges such as
-        grappling with opposing viewpoints, structuring their documents
-        effectively, and seeking inspiration for their writing. To emphasize the
-        significance of this problem, it's worth noting that effective writing
-        is a critical skill in academia and many professions. A tool that can
-        aid writers in overcoming common obstacles can have a profound impact on
-        their writing quality and productivity. We want to provide tools that
-        help users along and expand on their original thinking and writing,
-        rather than take away the need for it entirely.
-      </p>
+        <h2>Vision</h2>
+        <p>
+            Recent breakthroughs in large language models (LLMs) have led to the development of tools like Chat GPT and Bing Chat, which can produce texts comparable to those written by competent writers. The affordances of these tools encourage users to offload large parts of their thinking and writing onto the LLM. But in doing so, users surrender autonomy and authorship over their writing. Could LLMs instead encourage writers to reflect on texts that they wrote themselves? Could these reflections lead them to make meaningful revisions to their texts? Our goal is to provide writers with a tool that promotes reflection and encourages revision of their writing. Many writers encounter challenges such as grappling with opposing viewpoints, structuring their documents effectively, and seeking inspiration for their writing. To emphasize the significance of this problem, it's worth noting that effective writing is a critical skill in academia and many professions. A tool that can aid writers in overcoming common obstacles can have a profound impact on their writing quality and productivity. We want to provide tools that help users along and expand on their original thinking and writing, rather than take away the need for it entirely.
+        </p>
     </section>
 
     <section id="team">
-      <h2>Team</h2>
-      <p>Connor Broekhuizen: Senior majoring in computer science</p>
-      <p>Matthew Van Harn: Senior majoring in computer science</p>
+        <h2>Team</h2>
+        <p>Connor Broekhuizen: Senior majoring in computer science</p>
+        <p>Matthew Van Harn: Senior majoring in computer science</p>
     </section>
 
     <section id="code">
-      <h2>Codebase Overview</h2>
-      <p>Explore our projects on GitHub:</p>
-      <a href="https://github.com/AIToolsLab" target="_blank"
-        >GitHub Organization</a
-      >
-      <h2>Official DraftMirror Page</h2>
-      <p>
-        Visit the official DraftMirror landing page
-        <a href="https://tools.kenarnold.org/" target="_blank">here</a>.
-      </p>
+        <h2>Codebase Overview</h2>
+        <p>Explore our projects on GitHub:</p>
+        <a href="https://github.com/AIToolsLab" target="_blank">GitHub Organization</a>
+        <h2>Official DraftMirror Page</h2>
+        <p>Visit the official DraftMirror landing page <a href="https://tools.kenarnold.org/" target="_blank">here</a>.</p>
     </section>
 
     <section id="report">
-      <h2>Report</h2>
-      <p>
-        View the project proposal
-        <a
-          href="https://docs.google.com/document/d/1kibRGGb4QdMld_ltwYpyVEv5kcoqcePd/edit?usp=sharing&ouid=106080137785347176908&rtpof=true&sd=true"
-          target="_blank"
-          >here</a
-        >.
-      </p>
-      <p>
-        View the status report presentation
-        <a
-          href="https://docs.google.com/presentation/d/1Hpv6v0zw8AwK7k-ShAqqjD4LDoZeElghy_HcoLy3Kmg/edit?usp=sharing"
-          target="_blank"
-          >here</a
-        >.
-      </p>
+        <h2>Report</h2>
+        <p>View the project proposal <a href="https://docs.google.com/document/d/1kibRGGb4QdMld_ltwYpyVEv5kcoqcePd/edit?usp=sharing&ouid=106080137785347176908&rtpof=true&sd=true" target="_blank">here</a>.</p>
+        <p>View the status report presentation <a href="https://docs.google.com/presentation/d/1Hpv6v0zw8AwK7k-ShAqqjD4LDoZeElghy_HcoLy3Kmg/edit?usp=sharing" target="_blank">here</a>.</p>
     </section>
 
     <footer>
-      <p>Copyright © 2023 DraftMirror</p>
+        <p>Copyright © 2023 DraftMirror</p>
     </footer>
-  </body>
+</body>
 </html>
