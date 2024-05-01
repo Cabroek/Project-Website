@@ -22,11 +22,22 @@ body {
     font-size: 16pt;
     line-height: 1.6;
     width: 600px;
+    height: 300px; 
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
-    min-height: 300px;
     overflow: auto;
+    display: flex; 
+    align-items: center; 
+}
+
+.doc canvas {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 600px; 
+    height: 300px;
+    z-index: -1;
 }
 
 .doc:focus, .doc:hover {
@@ -39,5 +50,9 @@ body {
         font-size: 14pt;
         padding: 15px;
         width: 90%;
+        height: auto; 
+    }
+    .doc canvas {
+        width: 90%; 
     }
 }

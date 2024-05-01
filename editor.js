@@ -61,20 +61,23 @@ async function updateHighlights() {
         sel.setBaseAndExtent(textNode, start, textNode, end);
         let range = sel.getRangeAt(0);
         let rect = range.getBoundingClientRect();
+        let canvasRect = canvas.getBoundingClientRect();
+        let offsetY = canvasRect.top;
+
         ctx.fillStyle = `rgba(255, 255, 0, ${normalizedTokenLoss})`;
-        ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+        ctx.fillRect(rect.x - canvasRect.left, rect.y - offsetY, rect.width, rect.height);
 
         // Draw the alternative words underneath the text
         ctx.fillStyle = 'black';
         ctx.font = "15px serif"
-       if (most_likely_token !== token) {
-        ctx.fillText(most_likely_token, rect.x, rect.y + rect.height + 5);
+        if (most_likely_token !== token) {
+          ctx.fillText(most_likely_token, rect.x - canvasRect.left, rect.y + rect.height + 5 - offsetY);
+        }
 
         sel.removeAllRanges();
       }
     }
   }
-}
 }
 
 updateHighlights();
