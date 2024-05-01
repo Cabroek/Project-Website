@@ -62,16 +62,17 @@ async function updateHighlights() {
         let range = sel.getRangeAt(0);
         let rect = range.getBoundingClientRect();
         let canvasRect = canvas.getBoundingClientRect();
+        let offsetX = canvasRect.left;
         let offsetY = canvasRect.top;
 
         ctx.fillStyle = `rgba(255, 255, 0, ${normalizedTokenLoss})`;
-        ctx.fillRect(rect.x - canvasRect.left, rect.y - offsetY, rect.width, rect.height);
+        ctx.fillRect(rect.x - offsetX, rect.y - offsetY, rect.width, rect.height);
 
         // Draw the alternative words underneath the text
         ctx.fillStyle = 'black';
         ctx.font = "15px serif"
         if (most_likely_token !== token) {
-          ctx.fillText(most_likely_token, rect.x - canvasRect.left, rect.y + rect.height + 5 - offsetY);
+          ctx.fillText(most_likely_token, rect.x - offsetX, rect.y + rect.height + 5 - offsetY);
         }
 
         sel.removeAllRanges();
